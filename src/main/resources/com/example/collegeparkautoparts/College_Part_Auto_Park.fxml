@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <top>
+        <HBox alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
+            <children>
+                <Line endX="54.29289245605469" endY="0.7928932309150696" startX="-179.3345489501953" startY="0.7930618524551392" />
+                <Label alignment="CENTER" contentDisplay="CENTER" text="College Park Auto-PArts">
+                    <font>
+                        <Font name="Times New Roman" size="24.0" />
+                    </font>
+                </Label>
+                <Line endX="259.5" startX="-56.0" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+        </HBox>
+    </top>
+   <center>
+      <TreeTableView prefHeight="497.0" prefWidth="795.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TreeTableColumn prefWidth="75.0" text="C1" />
+          <TreeTableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TreeTableView>
+   </center>
+</BorderPane>

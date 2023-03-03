@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.collegeparkautoparts.CollegeParkController">
+   <bottom>
+      <StackPane prefHeight="79.0" prefWidth="600.0" style="-fx-border-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="750.0" style="-fx-background-color: f4f4f4;" text=" Order Summary " translateY="-40.0" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Total Order:">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TotalOrder" prefHeight="25.0" prefWidth="79.0" text="0.00">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="Close" mnemonicParsing="false" onAction="#close" text="Close">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+            <Line endX="549.2929077148438" endY="-7.241964340209961E-5" startX="-100.0" translateX="40.0" translateY="-35.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </bottom>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <top>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Line endX="54.29289245605469" endY="0.7928932309150696" startX="-179.3345489501953" startY="0.7930618524551392" />
+            <Label alignment="CENTER" contentDisplay="CENTER" text="College Park Auto-PArts">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+            </Label>
+            <Line endX="259.5" startX="-56.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #d3d3d3;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Label style="-fx-background-color: f4f4f4;" text="Car identification" translateX="-40.0" translateY="-115.0" />
+            <TreeView fx:id="tvwAutoParts" onMouseClicked="#TreeViewClick" prefHeight="181.0" prefWidth="179.0">
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+               </StackPane.margin>
+            </TreeView>
+         </children>
+      </StackPane>
+   </left>
+   <center>
+      <VBox prefHeight="379.0" prefWidth="565.0" style="-fx-border-color: d3d3d3;" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tbvwAutoParts" onMouseClicked="#tblvwClick" prefHeight="176.0" prefWidth="553.0">
+                     <columns>
+                        <TableColumn fx:id="tablePart" prefWidth="106.0" text="Part#" />
+                        <TableColumn fx:id="tablePartName" prefWidth="325.0" text="PartName" />
+                        <TableColumn fx:id="UnitPrice" minWidth="8.0" prefWidth="86.0" text="Unit Price" />
+                     </columns>
+                  </TableView>
+                  <Label prefHeight="17.0" prefWidth="456.0" style="-fx-background-color: #f4f4f4;" text="Available Parts" translateX="-5.0" translateY="-85.0" />
+                  <Line endX="400.0" startX="20.0" translateX="35.0" translateY="-80.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </StackPane>
+            <StackPane prefHeight="245.0" prefWidth="553.0" style="-fx-border-color: d3d3d3;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <children>
+                  <Label style="-fx-background-color: f4f4f4;" text="Selected Parts" translateX="-190.0" translateY="-122.0" />
+                  <GridPane alignment="CENTER" hgap="5.0" vgap="5.0" StackPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="76.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="67.0" minWidth="10.0" prefWidth="67.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="76.0" minWidth="10.0" prefWidth="58.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="70.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <StackPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </StackPane.margin>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Part#" />
+                        <Label text="  Part Name" GridPane.columnIndex="1" />
+                        <Label text="Unit Price" GridPane.columnIndex="2" />
+                        <Label text="Qty" GridPane.columnIndex="3" />
+                        <Label text="Sub Total" GridPane.columnIndex="4" />
+                        <TextField fx:id="txtPartNumber1" prefHeight="7.0" prefWidth="71.0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtPartNumber2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtPartName1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtPartName2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtPartNumber3" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtPartName3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtPartNumber4" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtPartName4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtPartNumber5" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtPartName6" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtPartName5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtPartNumber6" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtUnitPrice1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtQuantity1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtSubTotal1" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtUnitPrice2" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtQuantity2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtSubTotal2" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtUnitPrice3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtUnitPrice4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtQuantity3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtSubTotal3" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtUnitPrice5" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtSubTotal4" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtUnitPrice6" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtQuantity4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtSubTotal5" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtQuantity6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <TextField fx:id="txtQuantity5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtSubTotal6" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <Button fx:id="btnRemove1" mnemonicParsing="false" onAction="#btnRemove1Click" prefHeight="30.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Button fx:id="btnRemove2" layoutX="425.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnRemove2Click" prefHeight="30.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Button fx:id="btnRemove3" layoutX="425.0" layoutY="68.0" mnemonicParsing="false" onAction="#btnRemove3Click" prefHeight="25.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Button fx:id="btnRemove4" layoutX="425.0" layoutY="97.0" mnemonicParsing="false" onAction="#btnRemove4Click" prefHeight="25.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Button fx:id="btnRemove5" layoutX="425.0" layoutY="126.0" mnemonicParsing="false" onAction="#btnRemove5Click" prefHeight="25.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Button fx:id="btnRemove6" layoutX="425.0" layoutY="156.0" mnemonicParsing="false" onAction="#btnRemove6Click" prefHeight="25.0" prefWidth="81.0" text="Remove" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+               </children>
+            </StackPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
